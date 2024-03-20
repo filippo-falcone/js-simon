@@ -3,6 +3,7 @@
 // Stampo sul DOM l'array
 // Creo un setTimer di 30000 ms in cui
 // - Pulisco il dom
+// Creo un setTimer di 31000 ms in cui
 // - Creo un array 'enteredNumbers'
 // - Chiedo all'utente di inserie 5 numeri
 // - Inserisco questi numeri in 'enteredNumbers'
@@ -15,7 +16,12 @@ const domText = document.querySelector('#number');
 const guessNumbers = generatorRndNumbArray(5, 1, 100);
 /* BODY */
 domText.innerHTML = guessNumbers;
+setTimeout(cleanDom, 2000)
 /* FUNCTIONS */
+// Funzione richiamata in un setTimeout che pulisce il DOM
+function cleanDom() {
+    domText.innerHTML = '';
+}
 // Funzione che genera un array di numeri casuali unici
 // arrayLenght: elemento numerico che rappresenta la lunghezza massima dell'array
 // min: elemento numerico che rappresenta il numero minimo dell'intervallo dei numeri casuali
