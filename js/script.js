@@ -14,15 +14,18 @@
 /* MATERIAL */
 const domText = document.querySelector('#number');
 const guessNumbers = generatorRndNumbArray(5, 1, 100);
+
 /* BODY */
 domText.innerHTML = guessNumbers;
 setTimeout(cleanDom, 30000);
 setTimeout(playGame, 31000);
+
 /* FUNCTIONS */
 // Funzione richiamata in un setTimeout che pulisce il DOM
 function cleanDom() {
     domText.innerHTML = '';
 }
+
 // Funzione richiamata in un setTimeout che fa partire il gioco
 function playGame() {
     const enteredNumbers = [];
@@ -37,6 +40,7 @@ function playGame() {
     }
     domText.innerHTML = `Hai indovinato ${enteredNumbers.length} numeri: ${enteredNumbers}`;
 }
+
 // Funzione che genera un array di numeri casuali unici
 // arrayLength: elemento numerico che rappresenta la lunghezza massima dell'array
 // min: elemento numerico che rappresenta il numero minimo dell'intervallo dei numeri casuali
@@ -52,6 +56,7 @@ function generatorRndNumbArray(arrayLength, min, max) {
     }
     return rndArray;
 }
+
 // Funzione che genera numeri random
 // Presa da w3schools
 function getRndInteger(min, max) {
